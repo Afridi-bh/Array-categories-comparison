@@ -1,52 +1,49 @@
-Array Categories in Java and Python
+# Array Categories in Java and Python
 This repository demonstrates 4 categories of arrays used in Java and Python, showcasing the differences and similarities between the two languages in terms of stack vs heap memory, fixed size vs dynamic resizing, and how arrays are allocated in memory.
 
-Table of Contents
-Introduction
+# Table of Contents
+-Introduction
 
-Array Categories
+-Array Categories
 
-Code Examples
+-Code Examples
 
-Java Examples
+          -Java Examples
 
-Python Examples
+          -Python Examples
 
-Java vs Python Comparison
+-Java vs Python Comparison
 
-Contributions
 
-Introduction
+# Introduction
 In this repository, we explore 4 types of array categories based on how they manage memory and allocate space. We will examine Java and Python implementations for each of these categories.
 
-Array Categories
+# Array Categories
 There are 4 categories of arrays, and they are:
 
-✅ 1. Fixed-size, Stack-Dynamic Array
+1. Fixed-size, Stack-Dynamic Array
 Description: The size is determined during execution (runtime), but it cannot be changed after creation. The array is allocated in the method/block, simulating stack-based behavior.
 
 Languages: Both Java and Python simulate this by creating arrays inside functions.
 
-✅ 2. Stack-Dynamic Array
+2. Stack-Dynamic Array
 Description: The array is also created at runtime, typically with a size passed as a parameter.
 
 Languages: This is simulated in both Java and Python by creating arrays inside methods and passing the size as a parameter.
 
-✅ 3. Fixed-size, Heap-Dynamic Array
+3. Fixed-size, Heap-Dynamic Array
 Description: The array has a fixed size that is known at runtime, but it is allocated on the heap. Its size cannot change after allocation.
 
 Languages: In Java, arrays are always on the heap. Python uses array.array() or tuple for fixed-size arrays.
 
-✅ 4. Heap-Dynamic (Resizable) Array
+4. Heap-Dynamic (Resizable) Array
 Description: This array is fully dynamic. It can grow and shrink during execution. It is allocated on the heap and resized as needed.
 
 Languages: Java uses ArrayList, while Python uses list, which allows dynamic resizing.
 
-Code Examples
-Java Examples
-java
-Copy
-Edit
+# Code Examples
+# Java Examples :
+
 public class ArrayCategories {
 
     // Fixed-size, Stack-Dynamic Array
@@ -119,12 +116,11 @@ public class ArrayCategories {
         heapDynamicArray();
     }
 }
-Python Examples
-python
-Copy
-Edit
-# Fixed-size, Stack-Dynamic Array (simulated)
-def fixed_stack_dynamic_array():
+
+# Python Examples :
+    
+    // Fixed-size, Stack-Dynamic Array (simulated)
+    def fixed_stack_dynamic_array():
     size = 5
     arr = [0] * size  # array allocation (simulated stack)
 
@@ -133,8 +129,8 @@ def fixed_stack_dynamic_array():
 
     print("[1] Fixed-size, Stack-Dynamic:", arr)
 
-# Stack-Dynamic Array (simulated)
-def stack_dynamic_array(size):
+     // Stack-Dynamic Array (simulated)
+    def stack_dynamic_array(size):
     arr = [0] * size  # dynamically sized array
 
     for i in range(size):
@@ -142,9 +138,9 @@ def stack_dynamic_array(size):
 
     print("[2] Stack-Dynamic:", arr)
 
-# Fixed-size, Heap-Dynamic Array (simulated)
-import array
-def fixed_heap_dynamic_array():
+     // Fixed-size, Heap-Dynamic Array (simulated)
+     import array
+     def fixed_heap_dynamic_array():
     size = 5
     arr = array.array('i', [0] * size)  # fixed-size on heap
 
@@ -153,8 +149,8 @@ def fixed_heap_dynamic_array():
 
     print("[3] Fixed-size, Heap-Dynamic:", arr)
 
-# Heap-Dynamic Array (Resizable)
-def heap_dynamic_array():
+    // Heap-Dynamic Array (Resizable)
+    def heap_dynamic_array():
     arr = []
 
     for i in range(10):
@@ -162,15 +158,17 @@ def heap_dynamic_array():
 
     print("[4] Heap-Dynamic (Resizable):", arr)
 
-# Main driver
-if __name__ == "__main__":
-    fixed_stack_dynamic_array()
-    stack_dynamic_array(6)
-    fixed_heap_dynamic_array()
-    heap_dynamic_array()
-Java vs Python Comparison
-Category	Description	Java Example	Python Example
-1. Fixed-size, Stack-Dynamic	Size known at runtime, declared in method	int[] arr = new int[size];	arr = [0]*size (in function)
-2. Stack-Dynamic	Size passed as function argument	method(int size) { new int[size]; }	def f(size): arr = [0]*size
-3. Fixed-size, Heap-Dynamic	Fixed size on heap	Integer[] arr = new Integer[size];	import array; arr = array.array('i', [0]*size)
-4. Heap-Dynamic (Resizable)	Resizable array	ArrayList<Integer> arr = new ArrayList<>();	arr = [] and use append()
+    // Main driver
+    if __name__ == "__main__":
+
+
+## 🔄 Java vs Python Array Categories Comparison
+
+| **Category**                     | **Description**                                                                 | **Java Implementation**                                                | **Python Implementation**                           |
+|----------------------------------|----------------------------------------------------------------------------------|------------------------------------------------------------------------|------------------------------------------------------|
+| **1. Fixed-size, Stack-Dynamic** | Size known at runtime; array allocated in method, size can't change             | `int[] arr = new int[size];`                                           | `arr = [0] * size` (inside a function)              |
+| **2. Stack-Dynamic**             | Size passed to function/method at runtime; created dynamically in stack context | `stackDynamicArray(int size) { int[] arr = new int[size]; }`           | `def stack_dynamic_array(size): arr = [0] * size`   |
+| **3. Fixed-size, Heap-Dynamic**  | Allocated on heap, fixed size after creation                                     | `Integer[] arr = new Integer[size];`                                   | `arr = array.array('i', [0] * size)`                |
+| **4. Heap-Dynamic (Resizable)**  | Fully dynamic, grows/shrinks at runtime, heap allocated                         | `ArrayList<Integer> arr = new ArrayList<>(); arr.add(val);`            | `arr = []; arr.append(val)`                         |
+
+
