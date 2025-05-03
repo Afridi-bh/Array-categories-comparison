@@ -162,13 +162,14 @@ public class ArrayCategories {
     if __name__ == "__main__":
 
 
-## 🔄 Java vs Python Array Categories Comparison
+## 📊 Java vs Python Array Categories – Combined Description & Example
 
-| **Category**                     | **Description**                                                                 | **Java Implementation**                                                | **Python Implementation**                           |
-|----------------------------------|----------------------------------------------------------------------------------|------------------------------------------------------------------------|------------------------------------------------------|
-| **1. Fixed-size, Stack-Dynamic** | Size known at runtime; array allocated in method, size can't change             | `int[] arr = new int[size];`                                           | `arr = [0] * size` (inside a function)              |
-| **2. Stack-Dynamic**             | Size passed to function/method at runtime; created dynamically in stack context | `stackDynamicArray(int size) { int[] arr = new int[size]; }`           | `def stack_dynamic_array(size): arr = [0] * size`   |
-| **3. Fixed-size, Heap-Dynamic**  | Allocated on heap, fixed size after creation                                     | `Integer[] arr = new Integer[size];`                                   | `arr = array.array('i', [0] * size)`                |
-| **4. Heap-Dynamic (Resizable)**  | Fully dynamic, grows/shrinks at runtime, heap allocated                         | `ArrayList<Integer> arr = new ArrayList<>(); arr.add(val);`            | `arr = []; arr.append(val)`                         |
+| **Category**                     | **Java**                                                                 | **Python**                                      |
+|----------------------------------|--------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------|
+| **1. Fixed-size, Stack-Dynamic** | Declared inside a method with known size at runtime; not resizable. <br> `int[] arr = new int[size];` | Declared in a function with known runtime size; fixed length. <br> `arr = [0] * size` |
+| **2. Stack-Dynamic**             | Created dynamically in a method using a runtime parameter. <br> `void func(int size) { int[] arr = new int[size]; }` | Created inside a function using a size argument. <br> `def func(size): arr = [0] * size` |
+| **3. Fixed-size, Heap-Dynamic**  | Allocated on heap; size fixed at creation using wrapper class. <br> `Integer[] arr = new Integer[size];` | Uses `array` module; fixed size and typed. <br> `arr = array.array('i', [0] * size)` |
+| **4. Heap-Dynamic (Resizable)**  | Fully dynamic, resizable using ArrayList. <br> `ArrayList<Integer> arr = new ArrayList<>(); arr.add(10);` | Fully dynamic, resizable using list. <br> `arr = []; arr.append(10)` |
+
 
 
